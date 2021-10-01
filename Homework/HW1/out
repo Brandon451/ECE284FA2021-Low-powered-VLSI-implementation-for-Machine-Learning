@@ -7,28 +7,27 @@
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
-S_0x1496152f0 .scope module, "sfp_tb" "sfp_tb" 2 5;
+S_0x131806fa0 .scope module, "sfp_tb" "sfp_tb" 2 5;
  .timescale 0 0;
-P_0x149608c50 .param/l "bw" 0 2 7, +C4<00000000000000000000000000000100>;
-P_0x149608c90 .param/l "psum_bw" 0 2 8, +C4<00000000000000000000000000010000>;
-v0x14962a810_0 .var "acc", 0 0;
-v0x14962a8c0_0 .var "clk", 0 0;
-v0x14962a950_0 .var "expected_out", 15 0;
-v0x14962a9e0_0 .var/i "i", 31 0;
-v0x14962aa80_0 .var "in", 3 0;
-v0x14962ab60_0 .var/i "in_dec", 31 0;
-v0x14962ac00_0 .var/i "in_file", 31 0;
-v0x14962acb0_0 .var/i "in_scan_file", 31 0;
-o0x150040100 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
-v0x14962ad60_0 .net "out", 15 0, o0x150040100;  0 drivers
-v0x14962aea0_0 .var "relu", 0 0;
-v0x14962af30_0 .var "reset", 0 0;
-S_0x149609d50 .scope function.vec4.s4, "dec2bin" "dec2bin" 2 26, 2 26 0, S_0x1496152f0;
+P_0x131811e40 .param/l "bw" 0 2 7, +C4<00000000000000000000000000000100>;
+P_0x131811e80 .param/l "psum_bw" 0 2 8, +C4<00000000000000000000000000010000>;
+v0x131826510_0 .var "acc", 0 0;
+v0x1318265a0_0 .var "clk", 0 0;
+v0x131826630_0 .var "expected_out", 15 0;
+v0x1318266e0_0 .var/i "i", 31 0;
+v0x131826770_0 .var "in", 3 0;
+v0x131826840_0 .var/i "in_dec", 31 0;
+v0x1318268e0_0 .var/i "in_file", 31 0;
+v0x131826990_0 .var/i "in_scan_file", 31 0;
+v0x131826a40_0 .net "out", 15 0, L_0x131827090;  1 drivers
+v0x131826b80_0 .var "relu", 0 0;
+v0x131826c10_0 .var "reset", 0 0;
+S_0x131807110 .scope function.vec4.s4, "dec2bin" "dec2bin" 2 26, 2 26 0, S_0x131806fa0;
  .timescale 0 0;
-; Variable dec2bin is vec4 return value of scope S_0x149609d50
-v0x149629ef0_0 .var/i "weight", 31 0;
+; Variable dec2bin is vec4 return value of scope S_0x131807110
+v0x131825730_0 .var/i "weight", 31 0;
 TD_sfp_tb.dec2bin ;
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %cmpi/s 4294967295, 0, 32;
     %flag_or 5, 4; GT is !LE
     %flag_inv 5;
@@ -43,11 +42,11 @@ T_0.0 ;
     %ix/load 4, 3, 0;
     %flag_set/imm 4, 0;
     %ret/vec4 0, 4, 1; Assign to dec2bin (store_vec4_to_lval)
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %addi 8, 0, 32;
-    %store/vec4 v0x149629ef0_0, 0, 32;
+    %store/vec4 v0x131825730_0, 0, 32;
 T_0.1 ;
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %cmpi/s 3, 0, 32;
     %flag_or 5, 4; GT is !LE
     %flag_inv 5;
@@ -56,9 +55,9 @@ T_0.1 ;
     %ix/load 4, 2, 0;
     %flag_set/imm 4, 0;
     %ret/vec4 0, 4, 1; Assign to dec2bin (store_vec4_to_lval)
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %subi 4, 0, 32;
-    %store/vec4 v0x149629ef0_0, 0, 32;
+    %store/vec4 v0x131825730_0, 0, 32;
     %jmp T_0.3;
 T_0.2 ;
     %pushi/vec4 0, 0, 1;
@@ -66,7 +65,7 @@ T_0.2 ;
     %flag_set/imm 4, 0;
     %ret/vec4 0, 4, 1; Assign to dec2bin (store_vec4_to_lval)
 T_0.3 ;
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %cmpi/s 1, 0, 32;
     %flag_or 5, 4; GT is !LE
     %flag_inv 5;
@@ -75,9 +74,9 @@ T_0.3 ;
     %ix/load 4, 1, 0;
     %flag_set/imm 4, 0;
     %ret/vec4 0, 4, 1; Assign to dec2bin (store_vec4_to_lval)
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %subi 2, 0, 32;
-    %store/vec4 v0x149629ef0_0, 0, 32;
+    %store/vec4 v0x131825730_0, 0, 32;
     %jmp T_0.5;
 T_0.4 ;
     %pushi/vec4 0, 0, 1;
@@ -85,7 +84,7 @@ T_0.4 ;
     %flag_set/imm 4, 0;
     %ret/vec4 0, 4, 1; Assign to dec2bin (store_vec4_to_lval)
 T_0.5 ;
-    %load/vec4 v0x149629ef0_0;
+    %load/vec4 v0x131825730_0;
     %cmpi/s 0, 0, 32;
     %flag_or 5, 4; GT is !LE
     %flag_inv 5;
@@ -102,7 +101,7 @@ T_0.6 ;
     %ret/vec4 0, 4, 1; Assign to dec2bin (store_vec4_to_lval)
 T_0.7 ;
     %end;
-S_0x149629f90 .scope module, "sfp_instance" "sfp" 2 60, 3 3 0, S_0x1496152f0;
+S_0x1318257d0 .scope module, "sfp_instance" "sfp" 2 60, 3 3 0, S_0x131806fa0;
  .timescale 0 0;
     .port_info 0 /OUTPUT 16 "out";
     .port_info 1 /INPUT 4 "in";
@@ -110,98 +109,135 @@ S_0x149629f90 .scope module, "sfp_instance" "sfp" 2 60, 3 3 0, S_0x1496152f0;
     .port_info 3 /INPUT 1 "relu";
     .port_info 4 /INPUT 1 "clk";
     .port_info 5 /INPUT 1 "reset";
-P_0x14962a150 .param/l "bw" 0 3 5, +C4<00000000000000000000000000000100>;
-P_0x14962a190 .param/l "psum_bw" 0 3 6, +C4<00000000000000000000000000010000>;
-v0x14962a3d0_0 .net "acc", 0 0, v0x14962a810_0;  1 drivers
-v0x14962a470_0 .net "clk", 0 0, v0x14962a8c0_0;  1 drivers
-v0x14962a510_0 .net/s "in", 3 0, v0x14962aa80_0;  1 drivers
-v0x14962a5a0_0 .net/s "out", 15 0, o0x150040100;  alias, 0 drivers
-v0x14962a630_0 .net "relu", 0 0, v0x14962aea0_0;  1 drivers
-v0x14962a700_0 .net "reset", 0 0, v0x14962af30_0;  1 drivers
-    .scope S_0x1496152f0;
+P_0x131825990 .param/l "bw" 0 3 5, +C4<00000000000000000000000000000100>;
+P_0x1318259d0 .param/l "psum_bw" 0 3 6, +C4<00000000000000000000000000010000>;
+L_0x131827090 .functor BUFZ 16, v0x131826180_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+v0x131825c50_0 .net/s *"_ivl_0", 31 0, L_0x131826ca0;  1 drivers
+L_0x138050010 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x131825d10_0 .net/2s *"_ivl_2", 31 0, L_0x138050010;  1 drivers
+v0x131825db0_0 .net *"_ivl_4", 0 0, L_0x131826dd0;  1 drivers
+L_0x138050058 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x131825e40_0 .net/2s *"_ivl_6", 15 0, L_0x138050058;  1 drivers
+v0x131825ed0_0 .net "acc", 0 0, v0x131826510_0;  1 drivers
+v0x131825fa0_0 .net "clk", 0 0, v0x1318265a0_0;  1 drivers
+v0x131826030_0 .net/s "in", 3 0, v0x131826770_0;  1 drivers
+v0x1318260d0_0 .net/s "out", 15 0, L_0x131827090;  alias, 1 drivers
+v0x131826180_0 .var/s "psum_q", 15 0;
+v0x131826290_0 .net/s "psum_relu", 15 0, L_0x131826f10;  1 drivers
+v0x131826340_0 .net "relu", 0 0, v0x131826b80_0;  1 drivers
+v0x1318263e0_0 .net "reset", 0 0, v0x131826c10_0;  1 drivers
+E_0x131825c10 .event posedge, v0x131825fa0_0;
+L_0x131826ca0 .extend/s 32, v0x131826180_0;
+L_0x131826dd0 .cmp/gt.s 32, L_0x131826ca0, L_0x138050010;
+L_0x131826f10 .functor MUXZ 16, L_0x138050058, v0x131826180_0, L_0x131826dd0, C4<>;
+    .scope S_0x1318257d0;
 T_1 ;
-    %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %wait E_0x131825c10;
+    %load/vec4 v0x1318263e0_0;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_1.0, 4;
     %pushi/vec4 0, 0, 16;
-    %store/vec4 v0x14962a950_0, 0, 16;
-    %end;
+    %assign/vec4 v0x131826180_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0x131825ed0_0;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_1.2, 4;
+    %load/vec4 v0x131826180_0;
+    %load/vec4 v0x131826030_0;
+    %pad/s 16;
+    %add;
+    %assign/vec4 v0x131826180_0, 0;
+T_1.2 ;
+T_1.1 ;
+    %jmp T_1;
     .thread T_1;
-    .scope S_0x1496152f0;
+    .scope S_0x131806fa0;
 T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v0x131826630_0, 0, 16;
+    %end;
+    .thread T_2;
+    .scope S_0x131806fa0;
+T_3 ;
     %vpi_func 2 72 "$fopen" 32, "in_data.txt", "r" {0 0 0};
-    %store/vec4 v0x14962ac00_0, 0, 32;
+    %store/vec4 v0x1318268e0_0, 0, 32;
     %vpi_call 2 74 "$dumpfile", "sfp_tb.vcd" {0 0 0};
-    %vpi_call 2 75 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1496152f0 {0 0 0};
+    %vpi_call 2 75 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x131806fa0 {0 0 0};
     %delay 1, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962af30_0, 0, 1;
+    %store/vec4 v0x131826c10_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962aea0_0, 0, 1;
+    %store/vec4 v0x131826b80_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a810_0, 0, 1;
-    %delay 1, 0;
-    %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
-    %delay 1, 0;
-    %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x131826510_0, 0, 1;
     %delay 1, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %delay 1, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
+    %delay 1, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962af30_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x131826c10_0, 0, 1;
     %vpi_call 2 83 "$display", "-------------------- Computation start --------------------" {0 0 0};
     %pushi/vec4 0, 0, 32;
-    %store/vec4 v0x14962a9e0_0, 0, 32;
-T_2.0 ;
-    %load/vec4 v0x14962a9e0_0;
+    %store/vec4 v0x1318266e0_0, 0, 32;
+T_3.0 ;
+    %load/vec4 v0x1318266e0_0;
     %cmpi/s 10, 0, 32;
-    %jmp/0xz T_2.1, 5;
+    %jmp/0xz T_3.1, 5;
     %delay 1, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %delay 1, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962a810_0, 0, 1;
-    %vpi_func 2 91 "$fscanf" 32, v0x14962ac00_0, "%d\012", v0x14962ab60_0 {0 0 0};
-    %store/vec4 v0x14962acb0_0, 0, 32;
-    %load/vec4 v0x14962ab60_0;
-    %store/vec4 v0x149629ef0_0, 0, 32;
-    %callf/vec4 TD_sfp_tb.dec2bin, S_0x149609d50;
-    %store/vec4 v0x14962aa80_0, 0, 4;
-    %load/vec4 v0x14962a9e0_0;
+    %store/vec4 v0x131826510_0, 0, 1;
+    %vpi_func 2 91 "$fscanf" 32, v0x1318268e0_0, "%d\012", v0x131826840_0 {0 0 0};
+    %store/vec4 v0x131826990_0, 0, 32;
+    %load/vec4 v0x131826840_0;
+    %store/vec4 v0x131825730_0, 0, 32;
+    %callf/vec4 TD_sfp_tb.dec2bin, S_0x131807110;
+    %store/vec4 v0x131826770_0, 0, 4;
+    %load/vec4 v0x1318266e0_0;
     %addi 1, 0, 32;
-    %store/vec4 v0x14962a9e0_0, 0, 32;
-    %jmp T_2.0;
-T_2.1 ;
+    %store/vec4 v0x1318266e0_0, 0, 32;
+    %jmp T_3.0;
+T_3.1 ;
     %delay 1, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %delay 1, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a810_0, 0, 1;
+    %store/vec4 v0x131826510_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962aea0_0, 0, 1;
+    %store/vec4 v0x131826b80_0, 0, 1;
     %delay 1, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %delay 1, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x14962a8c0_0, 0, 1;
+    %store/vec4 v0x1318265a0_0, 0, 1;
     %vpi_call 2 101 "$display", "-------------------- Computation completed --------------------" {0 0 0};
     %delay 10, 0;
     %vpi_call 2 103 "$finish" {0 0 0};
     %end;
-    .thread T_2;
+    .thread T_3;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";
