@@ -15,6 +15,6 @@ output  signed [psum_bw-1:0] out;
 reg     signed [psum_bw-1:0] psum_q;
 wire    signed [psum_bw-1:0] psum_relu;
 
-...
+//...
 
 endmodule
