@@ -22,7 +22,7 @@ always @(posedge clk) begin
         psum_q <= 0;
     else begin
         if (acc == 1)
-        psum_q <= psum_q + in;
+        psum_q <= psum_q + {{(psum_bw-bw){in[bw-1]}}, in};
     end
         
 end
