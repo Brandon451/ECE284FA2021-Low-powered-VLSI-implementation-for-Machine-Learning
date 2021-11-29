@@ -400,9 +400,9 @@ initial begin
        	if (sfp_out == answer)
         	$display("Output featuremap Data number %2d matched! :D", i); 
        	else begin
-        	//$display("Output featuremap Data number %2d ERROR!!", i); 
+        	$display("Output featuremap Data number %2d ERROR!!", i); 
         	$display("sfpout: %128b", sfp_out);
-        	//$display("answer: %128b", answer);
+        	$display("answer: %128b", answer);
         	error = 1;
        	end
     end
