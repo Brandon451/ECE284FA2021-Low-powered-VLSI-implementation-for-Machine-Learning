@@ -1,0 +1,11 @@
+#col0row7[msb-lsb],col0row6[msb-lst],....,col0row0[msb-lst]#
+#col1row7[msb-lsb],col1row6[msb-lst],....,col1row0[msb-lst]#
+#................#
+2 7 9 D F 0 F 0 
+3 7 6 E 1 1 4 0 
+F 2 4 E 5 E B 1 
+0 1 D E 9 F D A 
+4 3 E E 0 F E 0 
+2 2 F D E 2 E 2 
+E E E E E E E E 
+1 6 F E 2 3 D 1 

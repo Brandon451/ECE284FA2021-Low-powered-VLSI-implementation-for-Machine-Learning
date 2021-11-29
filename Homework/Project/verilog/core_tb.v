@@ -374,7 +374,7 @@ initial begin
   	end  // end of kij loop
 
   ////////// Accumulation /////////
-  acc_file = $fopen("acc_address.txt", "r");
+  acc_file = $fopen("./text_files/addr/addr.txt", "r");
   out_file = $fopen("./text_files/output/out.txt", "r");  /// out.txt file stores the address sequence to read out from psum memory for accumulation
                                       /// This can be generated manually or in
                                       /// pytorch automatically
@@ -400,9 +400,9 @@ initial begin
        	if (sfp_out == answer)
         	$display("Output featuremap Data number %2d matched! :D", i); 
        	else begin
-        	$display("Output featuremap Data number %2d ERROR!!", i); 
+        	//$display("Output featuremap Data number %2d ERROR!!", i); 
         	$display("sfpout: %128b", sfp_out);
-        	$display("answer: %128b", answer);
+        	//$display("answer: %128b", answer);
         	error = 1;
        	end
     end
