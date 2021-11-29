@@ -20,6 +20,7 @@ module mac_array (clk, reset, out_s, in_w, in_n, inst_w, valid);
 
 	assign valid = temp_v[col*row-1:col*(row-1)];
 	assign temp_in_n[psum_bw*col-1:0] = in_n;
+	assign out_s = temp_in_n[psum_bw*col*(row+1)-1 : psum_bw*col*(row)];
 
 	genvar i;
   	for (i=1; i < row+1 ; i=i+1) begin : row_num

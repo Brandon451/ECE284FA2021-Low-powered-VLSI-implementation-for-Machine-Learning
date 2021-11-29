@@ -1,26 +1,35 @@
-// Created by prof. Mingu Kang @VVIP Lab in UCSD ECE department
-// Please do not spread this code without permission 
-module sram_32b_w2048 (CLK, D, Q, CEN, WEN, A);
+// Created by Brandon Saldanha
+module sram_32b_w2048 #(
+	parameter num = 2048,
+	parameter width = 32
+)(
+	input clk,
+	input [width-1:0] data_in,
+	output [width-1:0] data_out,
+	input chip_en,			//Low enable
+	input wr_en,			//Low enable
+	input [10:0] addr_in
+);
 
-  input  CLK;
-  input  WEN;
-  input  CEN;
-  input  [31:0] D;
-  input  [10:0] A;
-  output [31:0] Q;
-  parameter num = 2048;
+reg [width-1:0] memory [num-1:0];
+reg [10:0] add_q;
+assign data_out = memory[add_q];
 
-  reg [31:0] memory [num-1:0];
-  reg [10:0] add_q;
-  assign Q = memory[add_q];
+always @ (posedge clk) begin
+	if (!chip_en && wr_en) // read 
+    	add_q <= addr_in;
 
-  always @ (posedge CLK) begin
+   	if (!chip_en && !wr_en) // write
+      	memory[addr_in] <= data_in; 
+end
 
-   if (!CEN && WEN) // read 
-      add_q <= A;
-   if (!CEN && !WEN) // write
-      memory[A] <= D; 
+integer idx;
+initial begin
+	$dumpfile("core_tb.vcd");
+	for(idx = 0; idx < num; idx = idx+1) begin: register
+		$dumpvars(0, memory[idx]);
+	end
+end
 
-  end
 
 endmodule
